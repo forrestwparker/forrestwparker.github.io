@@ -3,11 +3,137 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Forrest Parker's Home Page</title>
+
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+		<style type="text/css">
+			/* Font families */
+			@font-face {
+				font-family: conformity;
+				src: url(./fonts/conformity.ttf);
+			}
+
+			@font-face{
+				font-family: consolas;
+				src: url(./fonts/consolas.ttf);
+			}
+
+			/* Primary page theme */
+			body {
+				background-image: url(./images/background.jpg);
+				color: white;
+			}
+
+			/* Navbar Properties */
+			nav.navbar {
+				position: fixed;
+				font: 2.5em conformity, sans-serif;
+			}
+
+			.navbar ul {
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+				text-align: center;
+			}
+
+			.navbar li {
+				float: left;
+			}
+
+			.navbar a {
+				display: inline;
+				padding: 10px 20px 0px 20px;
+			}
+
+			.navbar a:hover, .navbar a:active, .navbar a:visited, .navbar a:link {
+				color: white;
+				text-decoration: none;
+			}
+
+			.navbar a#brand {
+				padding: 10px 40px 0px 20px;
+			}
+
+			/* Main content */
+			main.main {
+				font: 1em consolas, sans-serif;
+			}
+
+		</style>
+
+		<script type="text/javascript">
+
+			// Run this on page load
+			$(document).ready(function() {
+
+				// functions and event listeners
+
+				// Gets a.navlink element by href value
+				function getNavlinkByHref(href) {
+					var navlinks = $(".navlink");
+					var link = null;
+					for (var i = 0; i < navlinks.length; i++) {
+						if ($(navlinks[i]).attr("href") == href) {
+							link = navlinks[i];
+						};
+					};
+					return link;
+				};
+
+				// Sets the underlined a.navlink element and
+				// removes it from all others
+				function changeActivePage(navlink) {
+					if ($(navlink).length != 0 && !($(navlink).css("text-decoration") == "underline")) {
+						$(".navlink").css("text-decoration","none");
+						$(navlink).css("text-decoration","underline");
+					};
+				};
+				
+				// Event listener for click on #brand element
+				$("#brand").on("click", function() {
+					var home = $(".navlink")[0];
+					changeActivePage(home);
+				});
+
+				// Event listener for click on a.navlink element
+				$(".navlink").on("click", function() {
+					changeActivePage(this);
+				});
+
+
+				// Do this stuff once page is loaded
+
+				// Sets the window to display content for
+				// page chosen in address bar
+				var url = document.URL;
+				var hashtagIndex = url.indexOf("#");
+				var activeNavlink = null;
+				if (hashtagIndex % url.length === url.length-1) {
+					activeNavlink = getNavlinkByHref("#");
+				}
+				else {
+					var href = url.substring(hashtagIndex, url.length);
+					activeNavlink = getNavlinkByHref(href);
+				};
+				changeActivePage(activeNavlink);
+			});
+
+		</script>
 	</head>
 	<body>
-		This is filler for now.
+		<nav class="navbar">
+			<ul>
+				<li><a id="brand" href="#">Forrest Parker</a></li>
+				<li><a class="navlink" href="#">Home</a></li>
+				<li><a class="navlink" href="#projects">Projects</a></li>
+				<li><a class="navlink" href="#publications">Publications</a></li>
+				<li><a class="navlink" href="#about">About Me</a></li>
+				<li><a class="navlink" href="#contact">Contact</a></li>
+			</ul>
+		</nav>
+		<main class="main">
+			<!--Some body text.-->
+		</main>
 	</body>
 </html>
