@@ -109,7 +109,7 @@
 				var url = document.URL;
 				var hashtagIndex = url.indexOf("#");
 				var activeNavlink = null;
-				if (hashtagIndex % url.length === url.length-1) {
+				if (hashtagIndex == -1 || hashtagIndex == url.length-1) {
 					activeNavlink = getNavlinkByHref("#");
 				}
 				else {
