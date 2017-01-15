@@ -3,11 +3,186 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Forrest Parker's Home Page</title>
+
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+		<style type="text/css">
+			/* Font families */
+			@font-face {
+				font-family: conformity;
+				src: url(./fonts/conformity.ttf);
+			}
+
+			@font-face{
+				font-family: consolas;
+				src: url(./fonts/consolas.ttf);
+			}
+
+			/* Primary page theme */
+			body {
+				background-image: url(./images/background.jpg);
+				background-repeat: no-repeat;
+				background-attachment: fixed;
+				background-size: auto;
+				color: white;
+			}
+
+			/* Navbar Properties */
+			nav {
+				position: fixed;
+				font: 2.5em conformity, sans-serif;
+			}
+
+			nav ul {
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+				width: 180px;
+			}
+
+			nav li {
+				display: block;
+				width: 180px;
+			}
+
+			nav a {
+				width: 180px;
+			}
+
+			nav a:hover, nav a:active, nav a:visited, nav a:link {
+				color: white;
+				text-decoration: none;
+			}
+
+			/* Main content */
+			main {
+				padding-left: 180px;
+			}
+
+			main section {
+				font: 1em consolas, sans-serif;
+				display: none;
+			}
+
+		</style>
+
+		<script type="text/javascript">
+
+			// Run this on page load
+			$(document).ready(function() {
+
+				// Variable for storing upcoming section fadeIn function
+				// that will get cancelled if another section is selected
+				// first
+				var timeoutID = null;
+
+
+				// functions
+
+				// Gets nav a element and the corresponding
+				// section element from a hash string.
+				function getNavlinkAndSectionElementsByHash(hash) {
+					if (hash == "" || hash == null || hash == "#") {
+						hash = "#home";
+					};
+					var navlinks = $("nav a");
+					var link = null;
+					for (var i = 0; i < navlinks.length; i++) {
+						if ($(navlinks[i]).attr("href") == hash) {
+							link = navlinks[i];
+						};
+					};
+					var section = null;
+					if (link != null) {
+						section = $(hash);
+					};
+					return [link, section];
+				};
+					
+				// Underlines a given nav a element and
+				// removes the underline from all others.
+				// Does nothing if the given nav a element
+				// is already underlined.
+				function switchActiveNavlink(navlink) {
+					if (navlink.length != 0 && !($(navlink).css("text-decoration") == "underline")) {
+						$("nav a").css("text-decoration", "none");
+						$(navlink).css("text-decoration", "underline");
+					};
+				};
+
+				// Fades out the current displayed section
+				// element and returns a function on a timer
+				// that will fade in the given section element
+				// after 500 milliseconds.
+				// Does nothing if the given section element
+				// is already displayed.
+				function switchActiveSection(newSection, timeoutID) {
+					window.clearTimeout(timeoutID);
+					if ($(newSection).length != 0 && $(newSection).css("display") == "none") {
+						var sections = $("section");
+						for (var i = 0; i < sections.length; i++) {
+							if ($(sections[i]).css("display") != "none") {
+								$(sections[i]).fadeOut();
+							};
+						};
+						return window.setTimeout(function() {$(newSection).fadeIn();}, 500);
+					};
+				};
+
+				// Calls previous functions to change which nav a element
+				// is underlined and which section element is displayed.
+				function changeActivePage(hash, timeoutID) {
+					var elements = getNavlinkAndSectionElementsByHash(hash);
+					switchActiveNavlink(elements[0]);
+					return switchActiveSection(elements[1], timeoutID);
+				};
+
+
+				// Event listeners
+
+				// Event listener for url hash change.
+				// On change, will call changeActivePage()
+				// with new hash string.
+				$(window).on("hashchange", function() {
+					timeoutID = changeActivePage(window.location.hash, timeoutID);
+				});
+
+
+				// Run once on load
+
+				// Sets the window to display content for
+				// page chosen in address bar
+				timeoutID = changeActivePage(window.location.hash, timeoutID);
+			});
+
+		</script>
 	</head>
 	<body>
-		This is filler for now.
+		<nav>
+			<ul>
+				<li><a href="#home">Home</a></li>
+				<li><a href="#portfolio">Portfolio</a></li>
+				<li><a href="#publications">Publications</a></li>
+				<li><a href="#about">About Me</a></li>
+				<li><a href="#contact">Contact</a></li>
+			</ul>
+		</nav>
+		<main>
+			<section id="home">
+				You found my site! Good for you!
+			</section>
+			<section id="portfolio">
+				These are some projects I'm working on.
+			</section>
+			<section id="publications">
+				Here's things I published.
+			</section>
+			<section id="about">
+				This is me.
+			</section>
+			<section id="contact">
+				Here's how you get ahold of me.
+			</section>
+		</main>
 	</body>
 </html>
