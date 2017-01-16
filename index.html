@@ -113,11 +113,11 @@
 						var sections = $("section");
 						for (var i = 0; i < sections.length; i++) {
 							if ($(sections[i]).css("display") != "none") {
-								$(sections[i]).fadeOut();
+								$(sections[i]).fadeOut(225);
 							};
 						};
-						return window.setTimeout(function() {$(newSection).fadeIn();}, 500);
 					};
+					return window.setTimeout(function() {$(newSection).fadeIn(225);}, 500);
 				};
 
 				// Calls previous functions to change which nav a element
