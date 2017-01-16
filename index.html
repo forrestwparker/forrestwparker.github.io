@@ -61,7 +61,7 @@
 
 			main section {
 				font: 1em consolas, sans-serif;
-				display: none;
+				/*display: none;*/
 			}
 
 		</style>
@@ -152,7 +152,10 @@
 
 				// Sets the window to display content for
 				// page chosen in address bar
-				timeoutID = changeActivePage(window.location.hash, timeoutID);
+				$("main section").css("display", "none");
+				var activeNavlinkAndSection = getNavlinkAndSectionElementsByHash(window.location.hash);
+				$(activeNavlinkAndSection[1]).css("display", "block");
+				$(activeNavlinkAndSection[0]).css("text-decoration", "underline");
 			});
 
 		</script>
