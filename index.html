@@ -85,17 +85,8 @@
 					if (hash == "" || hash == null || hash == "#") {
 						hash = "#home";
 					};
-					var navlinks = $("nav a");
-					var link = null;
-					for (var i = 0; i < navlinks.length; i++) {
-						if ($(navlinks[i]).attr("href") == hash) {
-							link = navlinks[i];
-						};
-					};
-					var section = null;
-					if (link != null) {
-						section = $(hash);
-					};
+					var link = $("[href='"+hash+"']");
+					var section = $(hash);
 					return [link, section];
 				};
 					
