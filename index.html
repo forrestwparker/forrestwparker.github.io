@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>Forrest Parker's Home Page</title>
+		<title>The website of Forrest W. Parker</title>
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
@@ -30,23 +30,23 @@
 			/* Navbar Properties */
 			nav {
 				position: fixed;
-				font: 2.5em conformity, sans-serif;
+				font: 40px conformity, sans-serif;
 			}
 
 			nav ul {
 				list-style-type: none;
 				margin: 0;
 				padding: 0;
-				width: 180px;
+				width: 200px;
 			}
 
 			nav li {
 				display: block;
-				width: 180px;
+				width: 200px;
 			}
 
 			nav a {
-				width: 180px;
+				width: 200px;
 			}
 
 			nav a:hover, nav a:active, nav a:visited, nav a:link {
@@ -54,18 +54,47 @@
 				text-decoration: none;
 			}
 
+			nav ul.newList {
+				padding-top: 30px;
+			}
+
+			nav li.smallText {
+				font-size: 32px;
+			}
+
+
 			/* Main content */
 			main {
-				padding-left: 180px;
+				padding-left: 200px;
 			}
 
 			main section {
-				font: 1em consolas, sans-serif;
+				font: 1.5em consolas, sans-serif;
 
 				/* Using JavaScript to set this value so
 				site remains usable in browsers with
 				JavaScript turned off. */
 				/*display: none;*/
+			}
+
+			.sectionTitle {
+				padding: 0;
+				margin: 0;
+				text-decoration: underline;
+			}
+
+			.sectionIntro {
+				padding: 0;
+				margin: 0;
+			}
+
+			.name {
+				font: 1.5em conformity, sans-serif;
+			}
+
+			main a:hover, main a:active, main a:visited, main a:link {
+				color: white;
+				text-decoration: underline;
 			}
 
 		</style>
@@ -148,6 +177,10 @@
 				// Set "display" css property on all section elements to "none" as a default.
 				$("main section").css("display", "none");
 
+				// Set "display" css property on all .sectionTitle class elements to "none"
+				// as a default.
+				$(".sectionTitle").css("display", "none");
+
 				// Underline correct nav a element and display corresponding section element
 				// from the hash value in the address bar.
 				// If either no hash exists or an invalid one is present, change the hash to
@@ -173,22 +206,52 @@
 				<li><a href="#about">About Me</a></li>
 				<li><a href="#contact">Contact</a></li>
 			</ul>
+			<ul class="newList">
+				<li>Find me on:</li>
+				<li class="smallText"><a href="https://www.linkedin.com/in/forrestwparker/">LinkedIn</a></li>
+				<li class="smallText"><a href="https://www.github.com/forrestwparker/">GitHub</a></li>
+			</ul>
 		</nav>
 		<main>
 			<section id="home">
-				You found my site! Good for you!
+				<h2 class="sectionIntro">Hello, my name is:</h2>
+				<h2 class="sectionIntro name">Forrest W. Parker</h2>
+
+				<p> I am an aspiring .Net develeper with an extensive background in mathematics. At present, I am a Ph.D. candidate in the mathematics department at Oregon State University. My current plan is to defend my doctoral thesis in early March, but I am hoping to find a job in the software development industry before then.</p>
+
+				<p>I have experience working with a number of languages, including C#, Python, SQL, HTML, CSS, JavaScript, LaTeX, and <a href="https://www.gap-system.org/">GAP</a>. Some more stuff about my abilities here.</p>
+
+				
+				
 			</section>
+
 			<section id="portfolio">
-				These are some projects I'm working on.
+				These are some software projects I've worked on.
 			</section>
+
 			<section id="publications">
-				Here's things I published.
+				These are some publications of mine.
 			</section>
+
 			<section id="about">
-				This is me.
+				<h1 class="sectionTitle">About me</h1>
+				<h2 class="sectionIntro">Who am I?</h2>
+
+				<p>More stuff about me first.</p>
+
+				<h2 class="sectionIntro">What brought me into software development?</h2>
+
+				<p>My interest in software development began in middle school when I wrote my first BASIC program on my TI-83 plus calculator. Several years (and many calculator programs) later, I completed an introductory software development course in Java as part of my program for finishing my bachelors degree. Although the course was not very extensive, it provided me with my first experience writing code for a pc. This was limited to simple console applications and without an object-oriented focus, but it was sufficient for my needs at the time.</p>
+
+				<p>After finishing my bachelors, I began attending OSU for my graduate education in mathematics. Writing software in Java, or any other language for that matter, fell by the wayside at this point as I was intensely focused on studying. It wasn't until a few years later when I was doing research for my doctoral thesis that prompted me to begin writing code again. There were aspects to my research that relied on results that would not have been practical to calculate by hand, so I began learning <a href="https://www.gap-system.org/">GAP</a>.</p>
+
 			</section>
+
 			<section id="contact">
-				Here's how you get ahold of me.
+				<h1 class="sectionTitle">
+				<h2 class="sectionIntro">How to reach me:</h2>
+				<p>Email: <a href="mailto:forrestwparker@gmail.com">forrestwparker@gmail.com</a></p>
+				<p>Phone: <a href="tel:+15412500061">(541) 250-0061</a></p>
 			</section>
 		</main>
 	</body>
