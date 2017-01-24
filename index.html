@@ -120,11 +120,12 @@
 				// Gets nav a element and the corresponding
 				// section element from a hash string.
 				function getNavlinkAndSectionElementsByHash(hash) {
-					if (hash == "" || hash == null || hash == "#") {
-						hash = "#home";
+					var lowerhash = hash.toLowerCase();
+					if (lowerhash == "" || lowerhash == null || lowerhash == "#") {
+						lowerhash = "#home";
 					};
-					var link = $("[href='"+hash+"']");
-					var section = $(hash);
+					var link = $("[href='"+lowerhash+"']");
+					var section = $(lowerhash);
 					return [link, section];
 				};
 					
@@ -139,7 +140,7 @@
 					};
 				};
 
-				// Fades out the current displayed section
+				// Fades out the currently displayed section
 				// element and returns a function on a timer
 				// that will fade in the given section element
 				// after 500 milliseconds.
@@ -216,11 +217,14 @@
 				<li class="smallText"><a href="https://www.linkedin.com/in/forrestwparker/" target="_blank">LinkedIn</a></li>
 				<li class="smallText"><a href="https://www.github.com/forrestwparker/" target="_blank">GitHub</a></li>
 			</ul>
+			<ul class="newList">
+				<li class="smallText"><a href="./documents/forrestwparker_resume.pdf" target="_blank">See my Resume</a></li>
+			</ul>
 		</nav>
 
 		<main>
 			<section id="home">
-				<h1 class="sectionTitle">Home</h1>
+				<h1 class="sectionTitle" id="Home">Home</h1>
 				<h2 class="sectionIntro">Hello, my name is:</h2>
 				<h2 class="sectionIntro name">Forrest W. Parker</h2>
 				<p>I am an aspiring .Net develeper with an extensive background in mathematics. At present, I am a Ph.D. candidate in the mathematics department at Oregon State University. Currently, I am seeking a position in the software development industry and am preparing to defend my doctoral thesis in the next few months.</p>
@@ -228,7 +232,7 @@
 			</section>
 
 			<section id="portfolio">
-				<h1 class="sectionTitle">Portfolio</h1>
+				<h1 class="sectionTitle" id="Portfolio">Portfolio</h1>
 
 				<h2 class="sectionIntro">Websites:</h2>
 
@@ -240,7 +244,7 @@
 			</section>
 
 			<section id="publications">
-				<h1 class="sectionTitle">Publications</h1>
+				<h1 class="sectionTitle" id="Publications">Publications</h1>
 				<h2 class="sectionIntro">Papers and books:</h2>
 				<ul class="bulletList">
 					<li>
@@ -254,7 +258,7 @@
 			</section>
 
 			<section id="about">
-				<h1 class="sectionTitle">About me</h1>
+				<h1 class="sectionTitle" id="About">About me</h1>
 				<h2 class="sectionIntro">Who am I?</h2>
 
 				<p>Under construction.</p>
@@ -269,7 +273,7 @@
 			</section>
 
 			<section id="contact">
-				<h1 class="sectionTitle">Contact info</h1>
+				<h1 class="sectionTitle" id="Contact">Contact info</h1>
 				<h2 class="sectionIntro">How to reach me:</h2>
 				<p>Email: <a href="mailto:forrestwparker@gmail.com">forrestwparker@gmail.com</a></p>
 				<p>Phone: <a href="tel:+15412500061">(541) 250-0061</a></p>
