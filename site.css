@@ -1,0 +1,94 @@
+/* Font families */
+@font-face {
+	font-family: conformity;
+	src: url(./fonts/conformity.ttf);
+}
+
+@font-face{
+	font-family: consolas;
+	src: url(./fonts/consolas.ttf);
+}
+
+/* Primary page theme */
+body {
+	background-image: url(./images/background.jpg);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: auto;
+	color: white;
+}
+
+/* Navbar Properties */
+nav {
+	position: fixed;
+	font: 40px conformity, sans-serif;
+}
+
+nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	width: 200px;
+}
+
+nav li {
+	display: block;
+	width: 200px;
+}
+
+nav a {
+	width: 200px;
+}
+
+nav a:hover, nav a:active, nav a:visited, nav a:link {
+	color: white;
+	text-decoration: none;
+}
+
+nav ul.newList {
+	padding-top: 30px;
+}
+
+nav li.smallText {
+	font-size: 32px;
+}
+
+
+/* Main content */
+main {
+	padding-left: 200px;
+}
+
+main section {
+	font: 20px consolas, sans-serif;
+	padding-bottom: 30px;
+
+	/* Using JavaScript to set this value so
+	site remains usable in browsers with
+	JavaScript turned off. */
+	/*display: none;*/
+}
+
+.sectionTitle {
+	padding: 0;
+	margin: 0;
+	text-decoration: underline;
+}
+
+.sectionIntro {
+	padding: 0;
+	margin: 0;
+}
+
+.name {
+	font: 40px conformity, sans-serif;
+}
+
+main a:hover, main a:active, main a:visited, main a:link {
+	color: white;
+	text-decoration: underline;
+}
+
+main section ul.bulletList li {
+	padding-bottom: 1em;
+}
