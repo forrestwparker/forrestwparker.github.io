@@ -1,3 +1,6 @@
-# forrestwparker.github.io
+### forrestwparker.github.io
+***
 
-Contains my personal website.
+This repository hosts my portfolio website [www.forrestwparker.com](http://www.forrestwparker.com/). It will be updated infrequently.
+
+Most recent major updates: August 2017
