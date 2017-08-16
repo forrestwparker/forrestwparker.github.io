@@ -71,12 +71,12 @@ $(document).ready(function() {
 
 	// Run once on load.
 
-	// Set 'display' css property on all section elements to 'none' as default.
+	// Set 'display' css property on all 'section' elements to 'none' as default.
 	$("main section").css("display", "none");
 
-	// Set 'display' css property on all '.sectionTitle' class elements to 'none'
+	// Set 'display' css property on all '.sectionHeader' class elements to 'none'
 	// as default.
-	$(".sectionTitle").css("display", "none");
+	$(".sectionHeader").css("display", "none");
 
 	// Underline correct 'nav a' element and display corresponding
 	// 'section' element from the hash value in the address bar.
