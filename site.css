@@ -16,6 +16,7 @@ body {
 	background-attachment: fixed;
 	background-size: auto;
 	color: white;
+	padding: 20px 0 0 10px;
 }
 
 /* Navbar Properties */
@@ -46,7 +47,7 @@ nav a:hover, nav a:active, nav a:visited, nav a:link {
 }
 
 nav ul.newList {
-	padding-top: 30px;
+	margin-top: 30px;
 }
 
 nav li.smallText {
@@ -56,12 +57,12 @@ nav li.smallText {
 
 /* Main content */
 main {
-	padding-left: 200px;
+	margin-left: 200px;
 }
 
 main section {
 	font: 20px consolas, sans-serif;
-	padding-bottom: 30px;
+	margin-bottom: 30px;
 
 	/* Using JavaScript to set this value so
 	site remains usable in browsers with
@@ -71,7 +72,7 @@ main section {
 
 .sectionHeader {
 	padding: 0;
-	margin: 0;
+	margin: 0 0 10px 0;
 	text-decoration: underline;
 }
 
@@ -90,5 +91,5 @@ main a:hover, main a:active, main a:visited, main a:link {
 }
 
 main section ul.bulletList li {
-	padding-bottom: 1em;
+	margin-bottom: 1em;
 }
