@@ -83,7 +83,11 @@ main section {
 	font-size: 26px;
 }
 
-.name {
+#namebox {
+	text-align: center;
+}
+
+#name {
 	font: 40px conformity, sans-serif;
 }
 
