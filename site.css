@@ -22,23 +22,24 @@ body {
 /* Navbar Properties */
 nav {
 	position: fixed;
-	font: 40px conformity, sans-serif;
+	font: 30px conformity, sans-serif;
 }
 
 nav ul {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
-	width: 200px;
+	width: 150px;
 }
 
 nav li {
 	display: block;
-	width: 200px;
+	width: 150px;
+	margin-bottom: -3px;
 }
 
 nav a {
-	width: 200px;
+	width: 150px;
 }
 
 nav a:hover, nav a:active, nav a:visited, nav a:link {
@@ -47,17 +48,17 @@ nav a:hover, nav a:active, nav a:visited, nav a:link {
 }
 
 nav ul.newList {
-	margin-top: 30px;
+	margin-top: 15px;
 }
 
 nav li.smallText {
-	font-size: 32px;
+	font-size: 24px;
 }
 
 
 /* Main content */
 main {
-	margin-left: 200px;
+	margin-left: 150px;
 }
 
 main section {
@@ -79,6 +80,7 @@ main section {
 .sectionIntro {
 	padding: 0;
 	margin: 0;
+	font-size: 26px;
 }
 
 .name {
