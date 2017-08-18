@@ -110,4 +110,8 @@ main a:hover, main a:active, main a:visited, main a:link {
 
 /* About Me section */
 
+.answerbox {
+	margin-left: 20px;
+}
+
 /* Contact section */
