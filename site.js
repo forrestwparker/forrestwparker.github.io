@@ -78,6 +78,9 @@ $(document).ready(function() {
 	// as default.
 	$(".sectionHeader").css("display", "none");
 
+	// Set 'display' css property on all '.firsthidden' class elements to 'initial'.
+	$(".firsthidden").css("display", "initial");
+	
 	// Underline correct 'nav a' element and display corresponding
 	// 'section' element from the hash value in the address bar.
 	// If either no hash exists or an invalid one is present, change
