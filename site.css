@@ -10,6 +10,7 @@
 }
 
 /* Primary page theme */
+
 body {
 	background-image: url(./images/background.jpg);
 	background-repeat: no-repeat;
@@ -20,6 +21,7 @@ body {
 }
 
 /* Navbar Properties */
+
 nav {
 	position: fixed;
 	font: 30px conformity, sans-serif;
@@ -55,8 +57,8 @@ nav li.smallText {
 	font-size: 24px;
 }
 
-
 /* Main content */
+
 main {
 	margin-left: 150px;
 }
@@ -64,11 +66,14 @@ main {
 main section {
 	font: 20px consolas, sans-serif;
 	margin-bottom: 30px;
-
-	/* Using JavaScript to set this value so
-	site remains usable in browsers with
-	JavaScript turned off. */
+	/* Using JavaScript to set this value so site remains
+	usable in browsers with JavaScript turned off. */
 	/*display: none;*/
+}
+
+main a:hover, main a:active, main a:visited, main a:link {
+	color: white;
+	text-decoration: underline;
 }
 
 .sectionHeader {
@@ -83,15 +88,34 @@ main section {
 	font-size: 26px;
 }
 
-.name {
-	font: 40px conformity, sans-serif;
+.firsthidden {
+	/* These elements should display
+	when JavaScript is enabled. */
+	display: none;
 }
 
-main a:hover, main a:active, main a:visited, main a:link {
-	color: white;
-	text-decoration: underline;
+/* Home section */
+
+#namebox {
+	text-align: center;
 }
 
-main section ul.bulletList li {
-	margin-bottom: 1em;
+#name {
+	font: 36px conformity, sans-serif;
 }
+
+/* Portfolio section */
+
+/* Publications section */
+
+#publicationlist li {
+	margin-bottom: 20px;
+}
+
+/* About Me section */
+
+.answerbox {
+	margin-left: 20px;
+}
+
+/* Contact section */

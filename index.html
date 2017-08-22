@@ -10,7 +10,7 @@
 	</head>
 	<body>
 		<nav>
-			<!-- Nav options are hard-coded for users who potentially do not have JavaScript enabled -->
+			<!-- Nav options are hard-coded for users who may not have JavaScript enabled. -->
 			<ul>
 				<li><a href="#home">Home</a></li>
 				<li><a href="#portfolio">Portfolio</a></li>
@@ -20,21 +20,32 @@
 			</ul>
 			<ul class="newList">
 				<li>Find me on:</li>
-				<li class="smallText"><a href="https://www.linkedin.com/in/forrestwparker/" target="_blank">LinkedIn</a></li>
-				<li class="smallText"><a href="https://www.github.com/forrestwparker/" target="_blank">GitHub</a></li>
+				<li class="smallText">
+					<a href="https://www.linkedin.com/in/forrestwparker/" target="_blank">LinkedIn</a>
+				</li>
+				<li class="smallText">
+					<a href="https://www.github.com/forrestwparker/" target="_blank">GitHub</a>
+				</li>
 			</ul>
 			<ul class="newList">
-				<li class="smallText"><a href="./documents/forrestwparker_resume.pdf" target="_blank">See my Resume</a></li>
+				<li class="smallText">
+					<a href="./documents/forrestwparker_resume.pdf" target="_blank">See my Resume</a>
+				</li>
 			</ul>
 		</nav>
 		<main>
 			<section id="home">
-				<h1 class="sectionHeader" id="Home">Home</h1>
-				<h2 class="sectionIntro">Hello, my name is:</h2>
-				<h2 class="sectionIntro name">Forrest W. Parker</h2>
-				<p>I'm an aspiring software engineer with a Ph.D. in mathematics. I have experience working with a number of languages including C#, Python, SQL, HTML, CSS, JavaScript, and <a href="https://www.gap-system.org/" target="_blank">GAP</a>. I have recently been learning Swift 4 with a focus on creating apps on iOS.</p>
+				<h1 class="sectionHeader" id="Home" style="margin: 0">
+					<!--Home-->
+				</h1>
+				<div id="namebox">
+					<img src="./images/photo.jpg" alt="Photo of Forrest Parker" height="200" width="200">
+					<h2 class="sectionIntro">Hello, my name is:</h2>
+					<h2 class="sectionIntro" id="name">Forrest W. Parker</h2>
+				</div>
+				<p>I am an aspiring software engineer with a Ph.D. in mathematics. I have experience working with a number of languages including C#, Python, SQL, HTML, CSS, JavaScript, and <a href="https://www.gap-system.org/" target="_blank">GAP</a>. I have recently been learning Swift 4 with a focus on creating apps on iOS.</p>
 				<p>As a mathematician, I proved the existence a relation between the algebraic and geometric properties of cyclically presented groups with positive length four relators. (The results are currently available both as a <a href="https://arxiv.org/abs/1611.05496" target="_blank">preprint</a> and in my <a href="https://ir.library.oregonstate.edu/xmlui/handle/1957/61589" target="_blank">thesis</a>.) As part of my research, I wrote a <a href="https://zenodo.org/record/800587" target="_blank">collection of GAP functions</a> that can determine several interesting properties of (suitable) cyclically presented groups.</p>
-				<p>For the time being, I am pursuing software engineering and developerment positions in the greater Portland, Oregon area (Hillsboro, Vancouver, etc.), however I am open to relocating as far south as Eugene if the right opportunity presents itself. Although the bulk of my coding education focused primarily on full-stack website development using the .Net framework, I am interested in positions that will provide me with the opportunity to expand my ability in other types of development. If you are seeking a friendly, intelligent, and self-motivated programmer who is eager to learn more, please take a <a href="./documents/forrestwparker_resume.pdf" target="_blank">look at my resume</a>.</p>
+				<p>For the time being, I am pursuing software engineering and developerment positions in the greater Portland, Oregon area (Hillsboro, Vancouver, etc.), however I am open to relocating as far south as Eugene if the right opportunity presents itself. Although the bulk of my coding education focused primarily on full-stack web development using the .Net framework, I am interested in positions that will provide me with the opportunity to expand my abilities in other types of development. If you are seeking a friendly, intelligent, and self-motivated programmer who is eager to learn more, please take a <a href="./documents/forrestwparker_resume.pdf" target="_blank">look at my resume</a>.</p>
 			</section>
 			<section id="portfolio">
 				<h1 class="sectionHeader" id="Portfolio">Portfolio</h1>
@@ -46,8 +57,8 @@
 			</section>
 			<section id="publications">
 				<h1 class="sectionHeader" id="Publications">Publications</h1>
-				<h2 class="sectionIntro">Academic publications:</h2>
-				<ul class="bulletList">
+				<h2 class="sectionIntro firsthidden">Academic publications:</h2>
+				<ul id="publicationlist">
 					<li>
 						<a href="https://ir.library.oregonstate.edu/xmlui/handle/1957/61589" target="_blank">Forrest W. Parker, Shift Dynamics of Cyclically Presented Groups with Length Four Positive Relators (Thesis)</a>
 					</li>
@@ -66,11 +77,15 @@
 			<section id="about">
 				<h1 class="sectionHeader" id="About">About me</h1>
 				<h2 class="sectionIntro">Who am I?</h2>
-				<p>Under construction.</p>
+				<div class="answerbox">
+					<p>Under construction.</p>
+				</div>
 				<h2 class="sectionIntro">What brought me into software development?</h2>
-				<p>My interest in writing software began in middle school when I wrote my first BASIC program on my TI-83 plus calculator. Several years (and many BASIC programs) later, I completed an introductory software development course in Java as part of the program to finishing my bachelors degree in mathematics. Although the course was not very extensive, it provided me with my first experience writing code on a pc; the scope was limited to simple console applications and lacked an object-oriented focus, but it was sufficient for my needs at the time.</p>
-				<p>After finishing my bachelors, I was accepted into the masters program in the mathematics department at Oregon State University. Programming fell by the wayside at this point as I was intensely focused on studying. A few years later, I moved on into the department's Ph.D. program. As part of the Ph.D. program, it was necessary for me to conduct some mathematics research under one of the department faculty members. During our research, my advisor introduced me to <a href="https://www.gap-system.org/" target="_blank">GAP</a> which he had used several times for his own research. It quickly became evident that GAP was going to be useful for my research as well, so I began spending part of my time learning more about the language. Ultimately, I created some new functionality for working with cyclically presented groups. I was quite proud when my code was able to produce the types of results I was seeking much more rapidly than the native functions of the language. Eventually, my research was essentially complete and it was time to write my thesis. It was this experience that lead me to making a change in my career goals.</p>
-				<p>Originally, I had set out in graduate school with the intention of one day doing mathematics research in a university setting. However, as I spent long hours writing my thesis, I would often distract myself by instead working on my GAP code to implement new functionality or to make it run more efficiently. After a while and much soul searching, I came to the conclusion that I wasn't excited about a career in academia; for as much as I enjoyed doing research, I didn't miss it when I wasn't doing it, and my heart was never in the teaching that I would be expected to perform alongside research once I was to start my career as an academic. As I found the most enjoyment in writing code, I decided I would start pursuing a career in software developer instead. After speaking with a colleague who made a similar transition into software development, I followed in her footsteps by attending a coding boot camp to pick up the skills I would need to find an entry-level position in the industry, which brought me to where I am now.</p>
+				<div class="answerbox">
+					<p>My interest in writing software began in middle school when I wrote my first BASIC program on my TI-83 plus calculator. Several years (and many BASIC programs) later, I completed an introductory software development course in Java as part of the program to finishing my bachelors degree in mathematics. Although the course was not very extensive, it provided me with my first experience writing code on a pc; the scope was limited to simple console applications and lacked an object-oriented focus, but it was sufficient for my needs at the time.</p>
+					<p>After finishing my bachelors, I was accepted into the masters program in the mathematics department at Oregon State University. Programming fell by the wayside at this point as I was intensely focused on studying. A few years later, I moved on into the department's Ph.D. program. As part of the Ph.D. program, it was necessary for me to conduct some mathematics research under one of the department faculty members. During our research, my advisor introduced me to <a href="https://www.gap-system.org/" target="_blank">GAP</a> which he had used several times for his own research. It quickly became evident that it was going to be useful for my research as well, so I began spending part of my time learning more about the language. Ultimately, I created some new functionality for working with cyclically presented groups. I was quite proud when my code was able to produce the types of results I was seeking much more rapidly than the native functions of the language. Eventually, my research was essentially complete and it was time to write my thesis. It was this experience that lead me to making a change in my career goals.</p>
+					<p>Originally, I had set out in graduate school with the intention of one day doing mathematics research in a university setting. However, as I spent long hours writing my thesis, I would often distract myself by instead working on my GAP code to implement new functionality or to make it run more efficiently. After a while and much soul searching, I came to the conclusion that I wasn't excited about a career in academia; for as much as I enjoyed doing research, I didn't miss it when I wasn't doing it, and my heart was never in the teaching that I would be expected to perform alongside research once I was to start my career as an academic. As I found the most enjoyment in writing code, I decided I would start pursuing a career in software developer instead. After speaking with a colleague who made a similar transition into software development, I followed in her footsteps by attending a coding boot camp to pick up the skills I would need to find an entry-level position in the industry, which brought me to where I am now.</p>
+				</div>
 			</section>
 			<section id="contact">
 				<h1 class="sectionHeader" id="Contact">Contact info</h1>
